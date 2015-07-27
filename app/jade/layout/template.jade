@@ -1,0 +1,53 @@
+//- template.jade
+include ../components/components.jade
+
+doctype html
+html(lang="en")
+  head
+    //- title
+    block title
+
+    //- meta tags
+    include meta-tags.jade
+
+    // build:css(.tmp) /styles/vendor.css
+    // bower:css
+    link(rel='stylesheet', href='../bower_components/font-awesome/css/font-awesome.css')
+    link(rel='stylesheet', href='../bower_components/devicon/devicon.min.css')
+    // endbower
+    // endbuild
+
+    // build:css1(.tmp) /styles/main.css
+    link(rel='stylesheet', href='/styles/main.css')
+    // endbuild
+
+  body
+
+    //- header
+    include ./header.jade
+
+    //- sidebar
+    include ./sidebar.jade
+
+    //- content
+    block content
+
+    //- footer
+    include ./footer.jade
+
+    // build:js /scripts/vendor.js
+    // bower:js
+    script(src='../bower_components/modernizr/modernizr.js')
+    script(src='../bower_components/jquery/dist/jquery.js')
+    script(src='../bower_components/jquery-ui/jquery-ui.js')
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='../bower_components/heartcode-canvasloader/index.js')
+    script(src='../bower_components/TweenJS/lib/tweenjs-0.6.1.combined.js')
+    script(src='../bower_components/EaselJS/lib/easeljs-0.8.1.combined.js')
+    script(src='../bower_components/PreloadJS/lib/preloadjs-0.6.1.combined.js')
+    // endbower
+    // endbuild
+
+    // build:js1(.tmp) /scripts/main.js
+    script(src='/scripts/main.js')
+    // endbuild

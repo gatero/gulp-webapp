@@ -1,0 +1,140 @@
+// Border radius
+.border-radius(@radius:5px){
+  .border-top-radius(@radius);
+  .border-right-radius(@radius);
+  .border-bottom-radius(@radius);
+  .border-left-radius(@radius);
+}
+//
+
+//
+.size(@width, @height:@width){
+  width: @width;
+  height: @height;
+}
+//
+
+//
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+//
+
+// central col
+.central-block(@width:70%){
+  .center-block;
+  width: @width;
+}
+//
+
+.vertical-center(){
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// media queries guard
+/*
+  .respond-to use example
+
+  .img-dummy{
+    .respond-to(mobile, {
+      border: 1px solid orange;
+    });
+  }
+
+  body{
+    .respond-to(breakmenu, {
+
+      .container {
+        background: @gray-dark;
+      }
+
+    });
+  }
+*/
+
+.respond-to(@media, @rules){
+  & when (@media = 'iphone5'){
+    @media(max-width: 320px){@rules();}
+  }
+  & when (@media = 'mobile'){
+    @media(max-width:@screen-xs-max){@rules();}
+  }
+  & when (@media = 'tablet'){
+    @media(min-width:@screen-sm-min) and (max-width:@screen-sm-max){@rules();}
+  }
+  & when (@media = 'desktop'){
+    @media(min-width:@screen-md-min) and (max-width:@screen-md-max){@rules();}
+  }
+  & when (@media = 'lg-desktop'){
+    @media(min-width:@screen-lg-min){@rules();}
+  }
+  & when (@media = 'breakmenu'){
+    @media(max-width:@grid-float-breakpoint){@rules();}
+  }
+}
+
+// end media queries guard
+/*
+* Vendor Utilities
+*/
+.translateY(@y) {
+  -webkit-transform: translateY(@y);
+     -moz-transform: translateY(@y);
+      -ms-transform: translateY(@y); // IE9 only
+       -o-transform: translateY(@y);
+          transform: translateY(@y);
+}
+.translateX(@x) {
+  -webkit-transform: translateX(@x);
+     -moz-transform: translateX(@x);
+      -ms-transform: translateX(@x); // IE9 only
+       -o-transform: translateX(@x);
+          transform: translateX(@x);
+}
+
+.translate-rotate(@x; @y; @deg){
+  -webkit-transform: translate(@x, @y) rotate(@deg);
+     -moz-transform: translate(@x, @y) rotate(@deg);
+      -ms-transform: translate(@x, @y) rotate(@deg);
+       -o-transform: translate(@x, @y) rotate(@deg);
+          transform: translate(@x, @y) rotate(@deg);
+}
+.translateY-rotate(@y; @deg){
+  -webkit-transform: translateY(@y) rotate(@deg);
+     -moz-transform: translateY(@y) rotate(@deg);
+      -ms-transform: translateY(@y) rotate(@deg);
+       -o-transform: translateY(@y) rotate(@deg);
+          transform: translateY(@y) rotate(@deg);
+}
+.translateX-rotate(@x; @deg){
+  -webkit-transform: translateX(@x) rotate(@deg);
+     -moz-transform: translateX(@x) rotate(@deg);
+      -ms-transform: translateX(@x) rotate(@deg);
+       -o-transform: translateX(@x) rotate(@deg);
+          transform: translateX(@x) rotate(@deg);
+}
+
+.scale-rotate(@scale, @rotate){
+  -webkit-transform: scale(@scale) rotate(@rotate);
+     -moz-transform: scale(@scale) rotate(@rotate);
+      -ms-transform: scale(@scale) rotate(@rotate);
+       -o-transform: scale(@scale) rotate(@rotate);
+          transform: scale(@scale) rotate(@rotate);
+}
+.scale-only(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio); // IE9 only
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+// Border radius
+.border-radius(@radius:5px){
+  .border-top-radius(@radius);
+  .border-right-radius(@radius);
+  .border-bottom-radius(@radius);
+  .border-left-radius(@radius);
+}

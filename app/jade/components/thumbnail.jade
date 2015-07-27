@@ -1,0 +1,12 @@
+mixin thumbnail_hover(image, effect)
+  .hover(class='effect-#{effect}')&attributes(attributes)
+    img(src=image)
+    if effect == 9
+      .view.mask-1
+      .view.mask-2
+    else
+      .view
+    .content
+      h4.title Lorem ipsum.
+      p.excerpt Lorem ipsum.
+      a.btn-hover(href="#") Lorem ipsum.

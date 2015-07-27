@@ -1,0 +1,33 @@
+@import 'general';
+.hover.effect-4{
+	// Initial
+		.view{
+			.scale-rotate(0; -180deg);
+			.transition(all 200ms ease-in);
+			.border-radius(0px);
+		}
+		.title{
+		   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		   background: transparent;
+			.transition(all 500ms ease-in-out);
+		}
+		.excerpt{
+			.transition(all 500ms ease-in-out);
+		}
+		.btn-hover{
+			.transition(all 500ms ease-in-out);
+		}
+	// animacion
+    &:hover{
+      .view, .title, .excerpt, .btn-hover{
+        .opacity(1);
+      }
+      .view{
+        .scale-rotate(1, 0deg);
+        .transition-delay(200sm);
+      }
+      .title, .excerpt, .btn-hover{
+        .transition-delay(500sm);
+      }
+    }
+}

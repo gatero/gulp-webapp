@@ -1,0 +1,42 @@
+@import 'general';
+.hover.effect-1{
+	// Initial
+		img{
+      .transition(all 200ms linear);
+    }
+		.view{
+			.transition(all 400ms ease-in-out);
+		}
+		.title{
+			.translateY(-100px);
+			.transition(all 200ms ease-in-out);
+		}
+		.excerpt{
+			.translateY(100px);
+			.transition(all 200ms ease-in-out);
+		}
+		.btn-hover{
+			.transition(all 200ms ease-in-out);
+		}
+	// animacion
+    &:hover{
+      .title, .excerpt{
+        .opacity(1);
+        .translateY(0px);
+      }
+      img{
+        .scale(1.1, 1.1);
+      }
+      .view{
+        .opacity(1);
+      }
+      .excerpt{
+        .transition-delay(100ms);
+      }
+      .btn-hover{
+        .opacity(1);
+        .translateY(10px);
+        .transition-delay(200ms);
+      }
+    }
+}
