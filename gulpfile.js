@@ -24,24 +24,15 @@ var gulp = require('gulp'),
     ];
 
 gulp.task('styles', function() {
-  gulp
-    .src(config.app+'/styles/main.less')
+  gulp.src(config.app+'/styles/main.scss')
+    .pipe($.autoprefixer())
     .pipe(
-      $.less({
+      $.sass({
         paths: ['bower_components']
       })
-      .on('error', $.util.log))
-      .pipe(
-        $.postcss([
-          require('autoprefixer-core')({
-            browsers: browsers
-          })
-        ])
-        .on('error', $.util.log)
-      )
-      .pipe(gulp.dest(config.tmp+'/styles'))
-      .pipe(browserSync.reload({stream: true})
-    );
+    )
+    .pipe(gulp.dest(config.tmp+'/styles'))
+    .pipe(browserSync.reload({stream: true})
 });
 
 gulp.task('usemin', function () {
