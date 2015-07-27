@@ -24,15 +24,12 @@ var gulp = require('gulp'),
     ];
 
 gulp.task('styles', function() {
-  gulp.src(config.app+'/styles/main.scss')
+  gulp
+    .src(config.app+'/styles/main.scss')
     .pipe($.autoprefixer())
-    .pipe(
-      $.sass({
-        paths: ['bower_components']
-      })
-    )
+    .pipe($.sass())
     .pipe(gulp.dest(config.tmp+'/styles'))
-    .pipe(browserSync.reload({stream: true})
+    .pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('usemin', function () {
