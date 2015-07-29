@@ -64,9 +64,8 @@ gulp.task('bower', function () {
     .src(config.app+'/jade/layout/template.jade')
     .pipe(
       wiredep({
-        exclude: 'bower_components/bootstrap/dist/css',
-        ignorePath: /^\/|\.\.\//,
-        directory: 'bower_components'
+        directory: 'bower_components',
+        ignorePath: /(^\/|\.\.\/)*/
       }).on('error', $.util.log)
     )
     .pipe(gulp.dest(config.app+'/jade/layout/'));
