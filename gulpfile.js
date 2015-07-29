@@ -35,7 +35,7 @@ gulp.task('styles', function() {
 
 gulp.task('scss-lint', function() {
   gulp
-    .src(config.app+'/styles/*/*.scss')
+    .src([config.app+'/styles/main.scss', config.app+'/styles/*/*.scss'])
     .pipe(scsslint({
       'config' : '.scss-lint.yml'
     }));
