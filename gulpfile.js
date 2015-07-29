@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
 
+    scsslint = require('gulp-scss-lint'),
     wiredep = require('wiredep').stream,
 
     // Load plugins
@@ -32,6 +33,14 @@ gulp.task('styles', function() {
     .pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('scss-lint', function() {
+  gulp
+    .src(config.app+'/styles/*/*.scss')
+    .pipe(scsslint({
+      'config' : '.scss-lint.yml'
+    }));
+});
+
 gulp.task('usemin', function () {
   gulp
     .src(config.tmp+'/*.html')
@@ -46,6 +55,7 @@ gulp.task('usemin', function () {
     )
     .pipe(gulp.dest(config.dist));
 });
+
 
 gulp.task('bower', function () {
   gulp
@@ -129,8 +139,8 @@ gulp.task('clean', function(cb) {
   del(['build'], cb);
 });
 
-gulp.task('watch', ['coffee','styles','images','jade', 'bower'], function() {
-  gulp.watch(config.app+'/**/*.scss', ['styles']);
+gulp.task('watch', ['coffee','scss-lint','styles','images','jade', 'bower'], function() {
+  gulp.watch(config.app+'/**/*.scss', ['scss-lint','styles']);
   gulp.watch(config.app+'/scripts/*.coffee', ['coffee']);
   gulp.watch(config.app+'/images/**/*', ['images']);
   gulp.watch(config.app+'/**/*.jade', ['jade']);
