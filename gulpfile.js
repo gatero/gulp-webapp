@@ -131,7 +131,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('watch', ['coffee','styles','images','jade', 'bower'], function() {
-  gulp.watch(config.app+'/**/*.less', ['styles']);
+  gulp.watch(config.app+'/**/*.scss', ['styles']);
   gulp.watch(config.app+'/scripts/*.coffee', ['coffee']);
   gulp.watch(config.app+'/images/**/*', ['images']);
   gulp.watch(config.app+'/**/*.jade', ['jade']);
