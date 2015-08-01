@@ -63,7 +63,7 @@ gulp.task('bower', function () {
     .pipe(
       wiredep({
         directory: 'bower_components',
-        ignorePath: /(^\/|\.\.\/)*/
+        ignorePath: /(^\/|\.\.\/){2}/
       }).on('error', $.util.log)
     )
     .pipe(gulp.dest(config.app+'/jade/layout/'));

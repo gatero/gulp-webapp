@@ -1,0 +1,29 @@
+{
+  "BUCKET_NAME": "test-vo",
+  "AwsConfig": "./AWSConf.json",
+
+  "styles": {
+    "local" : "./resources/css/",
+    "remote": "club_premier/newFiles/css/"
+  },
+
+  "scripts" : {
+    "local" : "./resources/code/",
+    "remote": "club_premier/js/"
+  },
+
+  "images" : {
+    "local": "./resources/audio/",
+    "remote": "club_premier/CPcms/"
+  },
+
+  "bower": {
+    "local" : "./resources/images/",
+    "remote": "club_premier/bower_components/"
+  },
+
+  "update_all": {
+    "local" : "./resources/",
+    "remote": "club_premier/bower_components/"
+  }
+}

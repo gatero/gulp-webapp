@@ -2,7 +2,9 @@
   "name": "package",
   "version": "0.0.0",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "2.x"
+  },
   "devDependencies": {
     "autoprefixer-core": "^3.1.1",
     "browser-sync": "^1.5.4",
@@ -24,6 +26,7 @@
     "gulp-uglify": "^1.2.0",
     "gulp-usemin": "^0.3.11",
     "gulp-util": "^3.0.1",
-    "wiredep": "^2.2.2"
+    "wiredep": "^2.2.2",
+    "recursive-readdir": "^1.2.1"
   }
 }
