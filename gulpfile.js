@@ -1,13 +1,19 @@
 'use strict';
 
-var gulp = require('gulp'),
-    browserSync = require('browser-sync'),
+var gulp        = require('gulp'),
 
-    scsslint = require('gulp-scss-lint'),
-    wiredep = require('wiredep').stream,
+    browserSync = require('browser-sync'),
+    scsslint    = require('gulp-scss-lint'),
+    wiredep     = require('wiredep').stream,
 
     // Load plugins
     $ = require('gulp-load-plugins')(),
+
+    S3Deploy    = require('./S3Deploy.class.js'),
+    s3Deploy    = new S3Deploy(),
+    S3DeployConf= {
+      type: 'update_all'
+    },
 
     // config paths
     config = {
@@ -23,6 +29,20 @@ var gulp = require('gulp'),
       'Firefox ESR',
       'Opera 12.1'
     ];
+
+// Deploy assets in amazon
+gulp.task('S3Deploy:create_bucket', function(){
+  s3Deploy.run('create_bucket');
+});
+
+gulp.task('S3Deploy:help', function(){
+  s3Deploy.help();
+});
+
+gulp.task('S3Deploy', function(){
+  s3Deploy.run(S3DeployConf.type);
+});
+// end Deploy assets in amazon
 
 gulp.task('styles', function() {
   gulp
@@ -55,7 +75,6 @@ gulp.task('usemin', function () {
     )
     .pipe(gulp.dest(config.dist));
 });
-
 
 gulp.task('bower', function () {
   gulp
