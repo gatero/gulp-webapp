@@ -4,7 +4,8 @@
 
   "styles": {
     "local" : "./dist/styles/",
-    "remote": "dist/styles/"
+    "remote": "dist/styles/",
+    "help": "Mensaje de ayuda para esta option"
   },
 
   "scripts" : {
