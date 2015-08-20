@@ -1,9 +1,17 @@
 //- header.jade
-nav(role="navigation").navbar.navbar-default
-  .container-fluid
-    .navbar-header
-      a(href="#").navbar-brand brand
-    .site-menu
-      ul.nav.navbar-nav
-        li.active: a(href="#")
-          span home
+nav.navbar.navbar-light.bg-faded
+  button.navbar-toggler.hidden-sm-up(type='button', data-toggle='collapse', data-target='#main-navbar')
+    | ☰
+  a.navbar-brand(href='#') Responsive navbar
+  #main-navbar.collapse.navbar-toggleable-xs
+    ul.nav.navbar-nav
+      li.nav-item.active
+        a.nav-link(href='#')
+          | Home
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='#') Features
+      li.nav-item
+        a.nav-link(href='#') Pricing
+      li.nav-item
+        a.nav-link(href='#') About
